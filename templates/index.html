@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMI Commerce | Executive Decision Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-header">
+            <button class="menu-icon-btn" id="sidebarToggle" title="Toggle Sidebar Navigation">☰</button>
+            <div class="brand-title-box">
+                <div class="brand-title">JMI Commerce</div>
+                <div class="brand-sub">Executive Decision Portal</div>
+            </div>
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showModule('hub')">
+                <span class="nav-icon">🏛️</span> <span class="nav-text">Executive Hub</span>
+            </li>
+            <li class="nav-item" onclick="showModule('lr')">
+                <span class="nav-icon">📈</span> <span class="nav-text">1. Linear Regression</span>
+            </li>
+            <li class="nav-item" onclick="showModule('dt')">
+                <span class="nav-icon">🌳</span> <span class="nav-text">2. Decision Tree</span>
+            </li>
+            <li class="nav-item" onclick="showModule('svm')">
+                <span class="nav-icon">🛡️</span> <span class="nav-text">3. Support Vector Machine</span>
+            </li>
+            <li class="nav-item" onclick="showModule('knn')">
+                <span class="nav-icon">🔍</span> <span class="nav-text">4. k-Nearest Neighbors</span>
+            </li>
+            <li class="nav-item" onclick="showModule('nb')">
+                <span class="nav-icon">💬</span> <span class="nav-text">5. Naive Bayes</span>
+            </li>
+            <li class="nav-item" onclick="showModule('log')">
+                <span class="nav-icon">🎯</span> <span class="nav-text">6. Logistic Regression</span>
+            </li>
+            <li class="nav-item" onclick="showModule('ann')">
+                <span class="nav-icon">🧠</span> <span class="nav-text">7. Artificial Neural Network</span>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <div style="font-weight:700; color:#0F172A; margin-bottom:4px;">Single User Persona</div>
+            <div>Internal Retail Admin Portal</div>
+        </div>
+    </aside>
+
+    <!-- Main View Content -->
+    <main class="main-content" id="mainContent">
+
+        <!-- ==========================================
+             1. EXECUTIVE HUB MODULE
+             ========================================== -->
+        <section id="mod-hub" class="module-section active">
+            <div class="page-header">
+                <h1>JMI Commerce Executive Portal</h1>
+                <p>Data-Driven Retail Decision Intelligence & Inventory Stock Optimization</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card" style="margin-bottom:0;">
+                    <h3>👁️ Company Vision</h3>
+                    <p>To empower JMI Commerce retail leadership with automated, data-driven operational intelligence that transforms raw retail sales, warehouse transfer logs, and supplier inventories into proactive, profitable stock strategies.</p>
+                </div>
+                <div class="card" style="margin-bottom:0;">
+                    <h3>🎯 Company Mission</h3>
+                    <p>To equip store management with an executive decision portal utilizing core machine learning algorithms—ranging from monthly sales forecasting to transfer anomaly detection and product substitution—ensuring balanced stock holding, eliminated stockouts, and maximum gross revenue.</p>
+                </div>
+            </div>
+
+            <div class="grid-3">
+                <div class="card metric-card" style="margin-bottom:0;">
+                    <div class="metric-title">Goal 1: Operational Precision</div>
+                    <div class="metric-value">0% Stockouts</div>
+                    <p style="margin-top:8px; font-size:0.95rem; color:#475569;">Eliminate stock gaps and dead inventory by grounding monthly stock orders in linear regression sales projections.</p>
+                </div>
+                <div class="card metric-card" style="margin-bottom:0;">
+                    <div class="metric-title">Goal 2: Revenue Protection</div>
+                    <div class="metric-value">-95% Audit Flags</div>
+                    <p style="margin-top:8px; font-size:0.95rem; color:#475569;">Automatically flag anomalous transfers, inventory shrinkage, and misreported store sales using SVM decision boundaries.</p>
+                </div>
+                <div class="card metric-card" style="margin-bottom:0;">
+                    <div class="metric-title">Goal 3: Catalog Velocity</div>
+                    <div class="metric-value">+30% Substitution Rate</div>
+                    <p style="margin-top:8px; font-size:0.95rem; color:#475569;">Instantly match out-of-stock items with nearest in-stock catalog substitutes using k-NN Euclidean distance matching.</p>
+                </div>
+            </div>
+
+            <!-- Retail Pain Points & ML Solution Matrix -->
+            <div class="card" style="margin-top: 24px;">
+                <h3>📋 Retail Pain Points & ML Solution Matrix</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Machine Learning Algorithm</th>
+                                <th>Underlying Retail Issue Solved</th>
+                                <th>JMI Commerce Application Module</th>
+                                <th>Strategic Goal Contribution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Linear Regression</strong></td>
+                                <td>Unpredictable sales volume leading to costly holding fees or lost customer transactions.</td>
+                                <td>Monthly Retail Sales Forecasting Module</td>
+                                <td><span class="badge badge-blue">Goal 1: Operational Precision</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Decision Tree Classifier</strong></td>
+                                <td>Dead stock and slow-moving items taking up valuable retail and warehouse shelf space.</td>
+                                <td>Slow-Moving & Inventory Risk Auditor</td>
+                                <td><span class="badge badge-blue">Goal 1: Operational Precision</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Support Vector Machine (SVM)</strong></td>
+                                <td>Transfer discrepancies, unverified stock movements, and inventory shrinkage risks.</td>
+                                <td>Transfer Anomaly & Audit Detection Queue</td>
+                                <td><span class="badge badge-red">Goal 2: Revenue Protection</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>k-Nearest Neighbors (k-NN)</strong></td>
+                                <td>Out-of-stock catalog items resulting in lost sales when exact brands are unavailable.</td>
+                                <td>Catalog Product Substitute & Attribute Matcher</td>
+                                <td><span class="badge badge-green">Goal 3: Catalog Velocity</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Naive Bayes Classifier</strong></td>
+                                <td>Unstructured product description cataloging causing misplaced supplier category tags.</td>
+                                <td>Product Description & Type Categorizer</td>
+                                <td><span class="badge badge-blue">Goal 1: Operational Precision</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Logistic Regression</strong></td>
+                                <td>Inability to predict which warehouse restocks will achieve top-tier retail sales conversion.</td>
+                                <td>High-Velocity Retail Conversion Predictor</td>
+                                <td><span class="badge badge-green">Goal 3: Catalog Velocity</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Artificial Neural Network (ANN)</strong></td>
+                                <td>Multi-variable non-linear sales dynamics, complex promotional interactions, and multi-factor stockout risk.</td>
+                                <td>Deep Demand & Dynamic Stockout Risk Predictor</td>
+                                <td><span class="badge badge-blue">Goal 1: Operational Precision</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Dataset Stats Grid -->
+            <div class="grid-4" style="margin-top: 24px;">
+                <div class="card stat-box">
+                    <div class="stat-num">341,037</div>
+                    <div class="stat-label">Total Transaction Records</div>
+                </div>
+                <div class="card stat-box">
+                    <div class="stat-num">48,563</div>
+                    <div class="stat-label">Unique Catalog Products</div>
+                </div>
+                <div class="card stat-box">
+                    <div class="stat-num">1,240</div>
+                    <div class="stat-label">Active Suppliers</div>
+                </div>
+                <div class="card stat-box">
+                    <div class="stat-num">$6.95</div>
+                    <div class="stat-label">Avg Item Retail Sales</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             2. LINEAR REGRESSION MODULE
+             ========================================== -->
+        <section id="mod-lr" class="module-section">
+            <div class="page-header">
+                <h1>Retail Sales Forecasting Module</h1>
+                <p>Predicting Continuous Monthly Sales Figures using Linear Regression</p>
+            </div>
+            <div class="analogy-box">
+                <strong>💡 Business Analogy:</strong> Think of a store ruler. If you know that transferring 10 cases from the warehouse consistently generates $9.95 in retail sales, Linear Regression draws that exact trend line so managers can project monthly income before placing stock orders.
+            </div>
+
+            <!-- Interactive Panel (Top) -->
+            <div class="card">
+                <h3>Interactive Forecast Panel</h3>
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label>Warehouse Sales Volume (Units)</label>
+                        <input type="number" id="lr_wh" value="25" min="0" max="1000" oninput="runLR()">
+                    </div>
+                    <div class="form-group">
+                        <label>Retail Transfers (Units)</label>
+                        <input type="number" id="lr_tr" value="10" min="0" max="500" oninput="runLR()">
+                    </div>
+                    <div class="form-group">
+                        <label>Operating Month (1 - 12)</label>
+                        <input type="number" id="lr_mo" value="8" min="1" max="12" oninput="runLR()">
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="runLR()">Calculate Sales Forecast</button>
+                <div class="output-banner">
+                    <div class="output-title">Projected Monthly Retail Sales</div>
+                    <div class="output-value" id="lr_out">$0.00</div>
+                </div>
+            </div>
+
+            <!-- Chart Panel (Bottom) -->
+            <div class="card">
+                <h3>Revenue Sensitivity Chart</h3>
+                <div class="chart-container-box">
+                    <canvas id="lrChart"></canvas>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="issue-box">
+                    <strong>❌ Retail Problem Solved:</strong> Eliminates guesswork when stocking retail store shelves. Managers often over-order warehouse inventory or under-stock items, hurting profit margins.
+                </div>
+                <div class="goal-box">
+                    <strong>🎯 Contribution to JMI Commerce Goals:</strong> Fulfills <em>Operational Precision</em> by projecting exact retail sales return relative to warehouse stock transfers.
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             3. DECISION TREE MODULE
+             ========================================== -->
+        <section id="mod-dt" class="module-section">
+            <div class="page-header">
+                <h1>Slow-Moving & Inventory Risk Classifier</h1>
+                <p>Auditing Item Holding Risk with Decision Trees</p>
+            </div>
+            <div class="analogy-box">
+                <strong>💡 Business Analogy:</strong> Imagine a decision flowchart at the store manager's desk: "Is retail sales under $1?" → If Yes, "Is warehouse stock over 5 units?" → If Yes, tag as "Slow-Moving / High Holding Risk". Decision Trees create clear, executable rules.
+            </div>
+
+            <!-- Interactive Panel (Top) -->
+            <div class="card">
+                <h3>Product Activity Audit Inspector</h3>
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label>Current Retail Sales ($)</label>
+                        <input type="number" id="dt_rs" value="0.0" step="0.5" oninput="runDT()">
+                    </div>
+                    <div class="form-group">
+                        <label>Warehouse Sales Volume (Units)</label>
+                        <input type="number" id="dt_wh" value="15.0" step="1.0" oninput="runDT()">
+                    </div>
+                    <div class="form-group">
+                        <label>Retail Transfers (Units)</label>
+                        <input type="number" id="dt_tr" value="5.0" step="1.0" oninput="runDT()">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Operating Month (1 - 12)</label>
+                    <input type="number" id="dt_mo" value="8" min="1" max="12" oninput="runDT()">
+                </div>
+                <button class="btn-primary" onclick="runDT()">Audit Inventory Risk</button>
+                <div class="output-banner" id="dt_banner">
+                    <div class="output-title">Holding Risk Classification</div>
+                    <div class="output-value" id="dt_out" style="font-size:1.6rem;">BALANCED INVENTORY</div>
+                    <div style="margin-top:6px; font-weight:600;" id="dt_prob">Calculated Risk: 0%</div>
+                </div>
+            </div>
+
+            <!-- Execution Logic Panel (Bottom) -->
+            <div class="card">
+                <h3>Decision Tree Logic Execution Path</h3>
+                <div class="logic-step">
+                    <strong>Node 1 (Retail Sales Check):</strong> Checks if current retail sales &lt; $1.00
+                </div>
+                <div class="logic-step">
+                    <strong>Node 2 (Warehouse Stock Check):</strong> Checks if warehouse stock &gt; 5 units
+                </div>
+                <div class="logic-step">
+                    <strong>Node 3 (Seasonal Audit):</strong> Evaluates sales activity for operating month
+                </div>
+                <div style="margin-top: 20px;">
+                    <label style="font-weight:700;">Slow-Moving Holding Risk Gauge:</label>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="dt_gauge" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="issue-box">
+                    <strong>❌ Retail Problem Solved:</strong> Prevents capital lockup in dead inventory. Identifies products sitting on warehouse shelves that fail to convert to retail store sales.
+                </div>
+                <div class="goal-box">
+                    <strong>🎯 Contribution to JMI Commerce Goals:</strong> Achieves <em>Operational Precision</em> by flagging slow-moving stock so managers can run promotional clearouts.
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             4. SUPPORT VECTOR MACHINE MODULE
+             ========================================== -->
+        <section id="mod-svm" class="module-section">
+            <div class="page-header">
+                <h1>Transfer Anomaly & Audit Detection Queue</h1>
+                <p>Detecting Irregular Stock Movements with Support Vector Machines</p>
+            </div>
+            <div class="analogy-box">
+                <strong>💡 Business Analogy:</strong> Imagine a high-security perimeter fence separating normal store transactions from suspicious, anomalous stock transfers. SVM calculates an optimal separation boundary (hyperplane) to isolate transfer anomalies.
+            </div>
+
+            <!-- Interactive Panel (Top) -->
+            <div class="card">
+                <h3>Stock Movement Audit Panel</h3>
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label>Retail Sales Amount ($)</label>
+                        <input type="number" id="svm_rs" value="5.0" step="1.0" oninput="runSVM()">
+                    </div>
+                    <div class="form-group">
+                        <label>Retail Transfers (Units)</label>
+                        <input type="number" id="svm_tr" value="50.0" step="1.0" oninput="runSVM()">
+                    </div>
+                    <div class="form-group">
+                        <label>Warehouse Sales (Units)</label>
+                        <input type="number" id="svm_wh" value="10.0" step="1.0" oninput="runSVM()">
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="runSVM()">Evaluate Transfer Anomaly</button>
+                <div class="output-banner" id="svm_banner">
+                    <div class="output-title">Security Queue Status</div>
+                    <div class="output-value" id="svm_out" style="font-size:1.5rem;">NORMAL TRANSACTION</div>
+                    <div style="margin-top:6px; font-weight:600;" id="svm_prob">Anomaly Probability: 0%</div>
+                </div>
+            </div>
+
+            <!-- Chart Panel (Bottom) -->
+            <div class="card">
+                <h3>SVM Hyperplane Decision Chart</h3>
+                <div class="chart-container-box">
+                    <canvas id="svmChart"></canvas>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="issue-box">
+                    <strong>❌ Retail Problem Solved:</strong> Prevents inventory shrinkage, misallocated stock transfers, and unrecorded loss across store locations.
+                </div>
+                <div class="goal-box">
+                    <strong>🎯 Contribution to JMI Commerce Goals:</strong> Strengthens <em>Revenue Protection</em> by automatically flagging suspicious stock movements prior to month-end accounting.
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             5. k-NEAREST NEIGHBORS MODULE
+             ========================================== -->
+        <section id="mod-knn" class="module-section">
+            <div class="page-header">
+                <h1>Catalog Product Substitute & Attribute Matcher</h1>
+                <p>Finding Closest Inventory Substitutes using k-NN</p>
+            </div>
+            <div class="analogy-box">
+                <strong>💡 Business Analogy:</strong> When a customer requests an out-of-stock wine or beer, an experienced store clerk finds another bottle with similar price, sales volume, and supplier profile. KNN calculates Euclidean feature distance to locate exact substitutes in the catalog.
+            </div>
+
+            <!-- Interactive Inputs (Top) -->
+            <div class="card">
+                <h3>Target Out-of-Stock Product Inputs</h3>
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label>Target Retail Sales ($)</label>
+                        <input type="number" id="knn_sales" value="15.0" step="1.0">
+                    </div>
+                    <div class="form-group">
+                        <label>Target Retail Transfers (Units)</label>
+                        <input type="number" id="knn_transfers" value="5.0" step="1.0">
+                    </div>
+                    <div class="form-group">
+                        <label>Target Warehouse Sales (Units)</label>
+                        <input type="number" id="knn_warehouse" value="25.0" step="1.0">
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="runKNN()">Find Nearest Substitutes (k=3)</button>
+            </div>
+
+            <!-- Results Table (Bottom) -->
+            <div class="card">
+                <h3>Top 3 Catalog Substitutes Found</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item Code</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th>Supplier</th>
+                                <th>Avg Sales</th>
+                                <th>Distance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="knn_results">
+                            <tr><td colspan="6" style="text-align:center;">Click button to query nearest catalog items...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="issue-box">
+                    <strong>❌ Retail Problem Solved:</strong> Solves lost sales caused by out-of-stock catalog items by providing instant product alternatives.
+                </div>
+                <div class="goal-box">
+                    <strong>🎯 Contribution to JMI Commerce Goals:</strong> Boosts <em>Catalog Velocity</em> and sales retention by keeping stock recommendations ready for floor staff.
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             6. NAIVE BAYES MODULE
+             ========================================== -->
+        <section id="mod-nb" class="module-section">
+            <div class="page-header">
+                <h1>Product Description & Type Categorizer</h1>
+                <p>Automatic Inventory Classification using Naive Bayes</p>
+            </div>
+            <div class="analogy-box">
+                <strong>💡 Business Analogy:</strong> If an incoming invoice text contains words like 'CABERNET', 'CHARDONNAY', or '750ML', Bayes' Theorem calculates the highest conditional probability that the product belongs to the 'WINE' category.
+            </div>
+
+            <!-- Interactive Panel (Top) -->
+            <div class="card">
+                <h3>Raw Product Description Input</h3>
+                <div class="form-group">
+                    <label>Product Invoice / Catalog Description Text</label>
+                    <input type="text" id="nb_desc" value="PINOT NOIR VINTAGE RED WINE 750ML">
+                </div>
+                <button class="btn-primary" onclick="runNB()">Categorize Product Type</button>
+                <div class="output-banner">
+                    <div class="output-title">Predicted Category Class</div>
+                    <div class="output-value" id="nb_out" style="color:#2563EB;">WINE</div>
+                </div>
+            </div>
+
+            <!-- Chart Panel (Bottom) -->
+            <div class="card">
+                <h3>Bayesian Probability Distribution Across Categories</h3>
+                <div class="chart-container-box">
+                    <canvas id="nbChart"></canvas>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="issue-box">
+                    <strong>❌ Retail Problem Solved:</strong> Eliminates manual tagging errors when uploading thousands of supplier inventory lines into the main store database.
+                </div>
+                <div class="goal-box">
+                    <strong>🎯 Contribution to JMI Commerce Goals:</strong> Enhances <em>Operational Precision</em> by ensuring consistent, automated categorization across all incoming product feeds.
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             7. LOGISTIC REGRESSION MODULE
+             ========================================== -->
+        <section id="mod-log" class="module-section">
+            <div class="page-header">
+                <h1>High-Velocity Retail Conversion Predictor</h1>
+                <p>Binary Sales Conversion Probability with Sigmoid Curve</p>
+            </div>
+            <div class="analogy-box">
+                <strong>💡 Business Analogy:</strong> Think of a top-seller meter. Higher warehouse volume and transfers raise the probability curve toward 100%, signaling that the product will become a top-performing retail item.
+            </div>
+
+            <!-- Interactive Panel (Top) -->
+            <div class="card">
+                <h3>Product Restock Input Parameters</h3>
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label>Warehouse Sales Volume (Units)</label>
+                        <input type="number" id="log_wh" value="30" oninput="runLOG()">
+                    </div>
+                    <div class="form-group">
+                        <label>Retail Transfers (Units)</label>
+                        <input type="number" id="log_tr" value="15" oninput="runLOG()">
+                    </div>
+                    <div class="form-group">
+                        <label>Operating Month (1 - 12)</label>
+                        <input type="number" id="log_mo" value="11" min="1" max="12" oninput="runLOG()">
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="runLOG()">Predict Top-Seller Velocity</button>
+                <div class="output-banner" id="log_banner">
+                    <div class="output-title">Predicted Sales Velocity Class</div>
+                    <div class="output-value" id="log_out" style="font-size:1.5rem;">HIGH VELOCITY</div>
+                    <div style="margin-top:6px; font-weight:600;" id="log_prob">Top-Seller Probability: 0%</div>
+                </div>
+            </div>
+
+            <!-- Chart Panel (Bottom) -->
+            <div class="card">
+                <h3>Sigmoid Conversion Probability Curve</h3>
+                <div class="chart-container-box">
+                    <canvas id="logChart"></canvas>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="issue-box">
+                    <strong>❌ Retail Problem Solved:</strong> Unsure restock allocation. Prevents store buyers from over-investing capital in restocks that fail to achieve top retail sales.
+                </div>
+                <div class="goal-box">
+                    <strong>🎯 Contribution to JMI Commerce Goals:</strong> Enhances <em>Catalog Velocity</em> by focusing store promotional display space on items with &gt;50% conversion probability.
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             8. ARTIFICIAL NEURAL NETWORK MODULE
+             ========================================== -->
+        <section id="mod-ann" class="module-section">
+            <div class="page-header">
+                <h1>Deep Demand & Dynamic Stockout Risk Predictor</h1>
+                <p>Non-linear demand estimation with inventory coverage and replenishment scenarios</p>
+            </div>
+            <div class="analogy-box">
+                <strong>💡 Business Analogy:</strong> The ANN combines product, supplier, timing, warehouse, and transfer patterns to estimate retail demand. Add current stock and a promotion scenario to see the uncovered-demand exposure and suggested order quantity.
+            </div>
+
+            <div class="card">
+                <h3>Demand & Inventory Scenario Inputs</h3>
+                <div class="form-grid-3">
+                    <div class="form-group">
+                        <label for="ann_year">Year</label>
+                        <input type="number" id="ann_year" value="2026" min="2000" max="2100">
+                    </div>
+                    <div class="form-group">
+                        <label for="ann_month">Month (1 - 12)</label>
+                        <input type="number" id="ann_month" value="8" min="1" max="12">
+                    </div>
+                    <div class="form-group">
+                        <label for="ann_item_code">Item Code</label>
+                        <input type="text" id="ann_item_code" value="180363">
+                    </div>
+                    <div class="form-group">
+                        <label for="ann_item_type">Item Type</label>
+                        <input type="text" id="ann_item_type" value="WINE">
+                    </div>
+                    <div class="form-group">
+                        <label for="ann_supplier">Supplier</label>
+                        <input type="text" id="ann_supplier" value="20705 IMPORTS">
+                    </div>
+                    <div class="form-group">
+                        <label for="ann_warehouse_sales">Warehouse Sales (Units)</label>
+                        <input type="number" id="ann_warehouse_sales" value="10" min="0" step="any">
+                    </div>
+                    <div class="form-group">
+                        <label for="ann_retail_transfers">Retail Transfers (Units)</label>
+                        <input type="number" id="ann_retail_transfers" value="2" min="0" step="any">
+                    </div>
+                    <div class="form-group">
+                        <label for="ann_stock">Current On-Hand Stock (Units)</label>
+                        <input type="number" id="ann_stock" value="5" min="0" step="any">
+                    </div>
+                    <div class="form-group">
+                        <label for="ann_price">Average Unit Price ($)</label>
+                        <input type="number" id="ann_price" value="25" min="0.01" step="any">
+                    </div>
+                    <div class="form-group">
+                        <label for="ann_promo">Promotion Uplift Scenario (%)</label>
+                        <input type="number" id="ann_promo" value="0" min="0" max="300" step="any">
+                    </div>
+                    <div class="form-group">
+                        <label for="ann_coverage">Stock Coverage Horizon (Days)</label>
+                        <input type="number" id="ann_coverage" value="30" min="1" max="90">
+                    </div>
+                </div>
+                <button class="btn-primary" id="ann_predict_btn" onclick="runANN()">Predict Demand & Stock Risk</button>
+                <div class="ann-error" id="ann_error" role="status" aria-live="polite"></div>
+            </div>
+
+            <div class="grid-3 ann-result-grid">
+                <div class="card ann-result-card">
+                    <div class="metric-title">Predicted Demand</div>
+                    <div class="metric-value" id="ann_demand">— units</div>
+                    <p class="ann-result-detail" id="ann_revenue">Estimated monthly retail sales: —</p>
+                </div>
+                <div class="card ann-result-card">
+                    <div class="metric-title">Estimated Stockout Exposure</div>
+                    <div class="metric-value" id="ann_risk">—%</div>
+                    <div class="progress-bar-bg" aria-label="Estimated uncovered demand">
+                        <div class="progress-bar-fill" id="ann_risk_gauge"></div>
+                    </div>
+                </div>
+                <div class="card ann-result-card">
+                    <div class="metric-title">Recommended Stocking Order</div>
+                    <div class="metric-value" id="ann_order">— units</div>
+                    <p class="ann-result-detail" id="ann_order_detail">Based on the selected coverage horizon</p>
+                </div>
+            </div>
+
+            <div class="ann-note">
+                <strong>Model limits:</strong> The supplied dataset has no promotion history, on-hand stock, or labeled stockout events. The promotion uplift is an adjustable what-if assumption, while stockout exposure is calculated as the share of estimated demand not covered by current stock; it is not a calibrated probability. The ANN estimates monthly retail sales value, converted to units using the entered average unit price. The random held-out evaluation is not a time-based forecast validation.
+            </div>
+            <div class="grid-2" style="margin-top: 24px;">
+                <div class="issue-box">
+                    <strong>❌ Retail Problem Solved:</strong> Brings product, supplier, season, and inventory movement signals together to support nonlinear demand planning.
+                </div>
+                <div class="goal-box">
+                    <strong>🎯 Contribution to JMI Commerce Goals:</strong> Supports <em>Goal 1: Operational Precision</em> with scenario-based stock coverage and reorder guidance.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Interactive JavaScript Engine -->
+    <script>
+        let chartLR = null;
+        let chartSVM = null;
+        let chartNB = null;
+        let chartLOG = null;
+        const annModelAvailable = {{ 'true' if ann_model_available else 'false' }};
+
+        // Sidebar Toggle
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+            document.getElementById('mainContent').classList.toggle('expanded');
+        });
+
+        // Module Navigation
+        function showModule(modId) {
+            document.querySelectorAll('.module-section').forEach(s => s.classList.remove('active'));
+            document.getElementById('mod-' + modId).classList.add('active');
+            
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            if(modId === 'lr') runLR();
+            if(modId === 'dt') runDT();
+            if(modId === 'svm') runSVM();
+            if(modId === 'knn') runKNN();
+            if(modId === 'nb') runNB();
+            if(modId === 'log') runLOG();
+            if(modId === 'ann' && annModelAvailable) runANN();
+        }
+
+        // --- LINEAR REGRESSION ---
+        async function runLR() {
+            const wh = parseFloat(document.getElementById('lr_wh').value) || 0;
+            const tr = parseFloat(document.getElementById('lr_tr').value) || 0;
+            const mo = parseInt(document.getElementById('lr_mo').value) || 1;
+
+            const res = await fetch('/api/predict_sales', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({warehouse_sales: wh, retail_transfers: tr, month: mo})
+            });
+            const data = await res.json();
+            document.getElementById('lr_out').innerText = '$' + data.predicted_sales.toFixed(2);
+
+            const xVals = [0, 50, 100, 150, 200, 250, 300, 350, 400];
+            const yVals = xVals.map(x => x * 0.35 + tr * 0.12 + 2.5);
+
+            const ctx = document.getElementById('lrChart').getContext('2d');
+            if(chartLR) chartLR.destroy();
+            chartLR = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: xVals,
+                    datasets: [{
+                        label: 'Projected Retail Sales ($)',
+                        data: yVals,
+                        borderColor: '#2563EB',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        // --- DECISION TREE ---
+        async function runDT() {
+            const rs = parseFloat(document.getElementById('dt_rs').value) || 0;
+            const wh = parseFloat(document.getElementById('dt_wh').value) || 0;
+            const tr = parseFloat(document.getElementById('dt_tr').value) || 0;
+            const mo = parseInt(document.getElementById('dt_mo').value) || 1;
+
+            const res = await fetch('/api/predict_risk', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({retail_sales: rs, warehouse_sales: wh, retail_transfers: tr, month: mo})
+            });
+            const data = await res.json();
+            
+            const outBox = document.getElementById('dt_out');
+            const probBox = document.getElementById('dt_prob');
+            const gauge = document.getElementById('dt_gauge');
+
+            if(data.is_slow_moving === 1) {
+                outBox.innerText = 'HIGH HOLDING RISK (SLOW MOVING)';
+                outBox.style.color = '#EF4444';
+                gauge.style.backgroundColor = '#EF4444';
+            } else {
+                outBox.innerText = 'BALANCED INVENTORY VELOCITY';
+                outBox.style.color = '#10B981';
+                gauge.style.backgroundColor = '#10B981';
+            }
+            probBox.innerText = 'Calculated Risk Probability: ' + data.probability + '%';
+            gauge.style.width = data.probability + '%';
+        }
+
+        // --- SVM ---
+        async function runSVM() {
+            const rs = parseFloat(document.getElementById('svm_rs').value) || 0;
+            const tr = parseFloat(document.getElementById('svm_tr').value) || 0;
+            const wh = parseFloat(document.getElementById('svm_wh').value) || 0;
+
+            const res = await fetch('/api/predict_anomaly', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({retail_sales: rs, retail_transfers: tr, warehouse_sales: wh})
+            });
+            const data = await res.json();
+
+            const outBox = document.getElementById('svm_out');
+            const probBox = document.getElementById('svm_prob');
+
+            if(data.is_anomaly === 1) {
+                outBox.innerText = '🚨 ANOMALY FLAGGED FOR AUDIT';
+                outBox.style.color = '#EF4444';
+            } else {
+                outBox.innerText = '✅ NORMAL TRANSACTION FLOW';
+                outBox.style.color = '#10B981';
+            }
+            probBox.innerText = 'Anomaly Probability: ' + data.probability + '%';
+
+            const ctx = document.getElementById('svmChart').getContext('2d');
+            if(chartSVM) chartSVM.destroy();
+            chartSVM = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Evaluated Stock Movement',
+                        data: [{x: rs, y: tr}],
+                        backgroundColor: data.is_anomaly === 1 ? '#EF4444' : '#10B981',
+                        pointRadius: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { title: { display: true, text: 'Retail Sales ($)' }, min: 0, max: 100 },
+                        y: { title: { display: true, text: 'Retail Transfers (Units)' }, min: 0, max: 200 }
+                    }
+                }
+            });
+        }
+
+        // --- KNN ---
+        async function runKNN() {
+            const sales = parseFloat(document.getElementById('knn_sales').value) || 0;
+            const transfers = parseFloat(document.getElementById('knn_transfers').value) || 0;
+            const warehouse = parseFloat(document.getElementById('knn_warehouse').value) || 0;
+
+            const res = await fetch('/api/find_substitutes', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({target_sales: sales, target_transfers: transfers, target_warehouse: warehouse})
+            });
+            const data = await res.json();
+
+            const tbody = document.getElementById('knn_results');
+            tbody.innerHTML = '';
+            data.substitutes.forEach(s => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${s['Item Code']}</strong></td>
+                    <td>${s['Item Description']}</td>
+                    <td><span class="badge badge-blue">${s['Item Type']}</span></td>
+                    <td>${s['Supplier']}</td>
+                    <td>$${s['Avg Retail Sales'].toFixed(2)}</td>
+                    <td><strong>${s['Euclidean Distance']}</strong></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // --- NAIVE BAYES ---
+        async function runNB() {
+            const desc = document.getElementById('nb_desc').value;
+
+            const res = await fetch('/api/classify_item', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({item_description: desc})
+            });
+            const data = await res.json();
+
+            document.getElementById('nb_out').innerText = data.predicted_type;
+
+            const labels = Object.keys(data.probabilities);
+            const probs = Object.values(data.probabilities);
+
+            const ctx = document.getElementById('nbChart').getContext('2d');
+            if(chartNB) chartNB.destroy();
+            chartNB = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Category Probability (%)',
+                        data: probs,
+                        backgroundColor: '#2563EB'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { min: 0, max: 100 } }
+                }
+            });
+        }
+
+        // --- LOGISTIC REGRESSION ---
+        async function runLOG() {
+            const wh = parseFloat(document.getElementById('log_wh').value) || 0;
+            const tr = parseFloat(document.getElementById('log_tr').value) || 0;
+            const mo = parseInt(document.getElementById('log_mo').value) || 1;
+
+            const res = await fetch('/api/predict_velocity', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({warehouse_sales: wh, retail_transfers: tr, month: mo})
+            });
+            const data = await res.json();
+
+            const outBox = document.getElementById('log_out');
+            const probBox = document.getElementById('log_prob');
+
+            if(data.is_top_seller === 1) {
+                outBox.innerText = 'HIGH VELOCITY (TOP SELLER)';
+                outBox.style.color = '#10B981';
+            } else {
+                outBox.innerText = 'STANDARD / LOW CONVERSION';
+                outBox.style.color = '#F59E0B';
+            }
+            probBox.innerText = 'Top-Seller Probability: ' + data.probability + '%';
+
+            const xVals = [-5, -3, -1, 0, 1, 3, 5];
+            const yVals = xVals.map(x => (1 / (1 + Math.exp(-x))) * 100);
+
+            const ctx = document.getElementById('logChart').getContext('2d');
+            if(chartLOG) chartLOG.destroy();
+            chartLOG = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: xVals,
+                    datasets: [{
+                        label: 'Sigmoid Conversion Curve (%)',
+                        data: yVals,
+                        borderColor: '#2563EB',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        // --- ARTIFICIAL NEURAL NETWORK ---
+        async function runANN() {
+            const button = document.getElementById('ann_predict_btn');
+            const errorBox = document.getElementById('ann_error');
+            const riskGauge = document.getElementById('ann_risk_gauge');
+            errorBox.textContent = '';
+            button.disabled = true;
+
+            const payload = {
+                year: Number(document.getElementById('ann_year').value),
+                month: Number(document.getElementById('ann_month').value),
+                item_code: document.getElementById('ann_item_code').value.trim(),
+                item_type: document.getElementById('ann_item_type').value.trim(),
+                supplier: document.getElementById('ann_supplier').value.trim(),
+                warehouse_sales: Number(document.getElementById('ann_warehouse_sales').value),
+                retail_transfers: Number(document.getElementById('ann_retail_transfers').value),
+                current_stock_units: Number(document.getElementById('ann_stock').value),
+                unit_price: Number(document.getElementById('ann_price').value),
+                promo_uplift_pct: Number(document.getElementById('ann_promo').value),
+                coverage_days: Number(document.getElementById('ann_coverage').value)
+            };
+
+            try {
+                const response = await fetch('/api/ann/predict', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(payload)
+                });
+                const data = await response.json();
+                if (!response.ok) {
+                    throw new Error(data.error || 'ANN prediction failed.');
+                }
+
+                document.getElementById('ann_demand').innerText =
+                    data.predicted_demand_units.toFixed(1) + ' units';
+                document.getElementById('ann_revenue').innerText =
+                    'Estimated monthly retail sales: $' + data.predicted_monthly_sales.toFixed(2);
+                document.getElementById('ann_risk').innerText =
+                    data.stockout_risk_pct.toFixed(1) + '%';
+                document.getElementById('ann_order').innerText =
+                    data.recommended_order_units + ' units';
+                document.getElementById('ann_order_detail').innerText =
+                    'For the next ' + data.coverage_days + ' days';
+                riskGauge.style.width = data.stockout_risk_pct + '%';
+                riskGauge.style.backgroundColor =
+                    data.stockout_risk_pct >= 50 ? '#EF4444' : '#F59E0B';
+            } catch (error) {
+                errorBox.textContent = error.message;
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        window.onload = function() {
+            runLR();
+            if (!annModelAvailable) {
+                document.getElementById('ann_error').textContent =
+                    'ANN model artifact is unavailable. Run train_ann_model.py to enable predictions.';
+            }
+        };
+    </script>
+</body>
+</html>
